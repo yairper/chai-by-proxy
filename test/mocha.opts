@@ -1,0 +1,2 @@
+--require ./test/support/chai_should
+--compilers coffee:coffee-script/register

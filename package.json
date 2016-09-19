@@ -1,0 +1,23 @@
+{
+  "name": "chai-by-proxy",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yairper/chai-by-proxy.git"
+  },
+  "author": "yairper",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yairper/chai-by-proxy/issues"
+  },
+  "homepage": "https://github.com/yairper/chai-by-proxy#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "coffee-script": "^1.10.0"
+  }
+}
