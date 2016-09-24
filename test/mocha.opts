@@ -1,2 +1,3 @@
---require ./test/support/chai_should
+--require ./test/support/chai
+--require ./test/support/sinon
 --compilers coffee:coffee-script/register
