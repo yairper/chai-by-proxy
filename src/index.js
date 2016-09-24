@@ -5,6 +5,8 @@ module.exports = function (chai) {
 
   property('without', propertyProxy(negate))
   property('have',    propertyProxy(setRootObj))
+  property('with',    propertyProxy(setRootObj))
+  property('has',     propertyProxy(setRootObj))
   property('and',     propertyProxy(useRootObj))
 
   function negate () {
