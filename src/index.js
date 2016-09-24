@@ -18,8 +18,10 @@ module.exports = function (chai) {
   function useRootObj () {
     var rootObj = flag(this, 'rootObj')
 
-    if (rootObj)
+    if (rootObj) {
       flag(this, 'object', rootObj)
+      flag(this, 'negate', false)
+    }
   }
 
   function property (name, getter) {
