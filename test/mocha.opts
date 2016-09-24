@@ -2,8 +2,8 @@
 --require ./test/support/sinon
 
 --require es6-symbol/implement
+--harmony
 --harmony_proxies
 --require harmony-reflect
---harmony
 
 --compilers coffee:coffee-script/register
