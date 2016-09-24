@@ -1,7 +1,7 @@
-module.exports = (chai) => {
+module.exports = function (chai) {
 
-  const flag = chai.util.flag
-  const propertyProxy = require('./propertyProxy')
+  var flag = chai.util.flag
+  var propertyProxy = require('./propertyProxy')
 
   property('without', propertyProxy(negate))
   property('have',    propertyProxy(setRootObj))
@@ -16,13 +16,14 @@ module.exports = (chai) => {
   }
 
   function useRootObj () {
-    let rootObj = flag(this, 'rootObj')
+    var rootObj = flag(this, 'rootObj')
 
     if (rootObj)
       flag(this, 'object', rootObj)
   }
 
   function property (name, getter) {
-    chai.Assertion.overwriteProperty(name, ()=> getter)
+    chai.Assertion.overwriteProperty(name,
+      function () { return getter })
   }
 }

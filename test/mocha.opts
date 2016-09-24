@@ -1,3 +1,8 @@
 --require ./test/support/chai
 --require ./test/support/sinon
+
+--require es6-symbol/implement
+--harmony_proxies
+--require harmony-reflect
+
 --compilers coffee:coffee-script/register

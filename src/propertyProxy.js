@@ -1,13 +1,13 @@
-const _proxy = Symbol()
+var _proxy = Symbol()
 
-module.exports = (behaviour) =>
-  function () {
+module.exports = function (behaviour) {
+  return function () {
     behaviour.call(this)
     
     if (!this[_proxy])
       this[_proxy] = new Proxy(this, {
 
-        get (target, name, proxy) {
+        get: function (target, name, proxy) {
           if (name in target)
             return target[name]
           else {
@@ -19,3 +19,4 @@ module.exports = (behaviour) =>
 
     return this[_proxy] 
   }
+}
