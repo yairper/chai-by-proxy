@@ -1,12 +1,20 @@
 # chai-by-proxy
 
 ## Usage
-### mocha.opts (0.10 < node < 6)
+### node 6
 ```
---harmony_proxies
---require harmony-reflect
+mocha
+```
 
---harmony # node 0.10 only
+### node 0.12+
+```
+npm install --save-dev harmony-reflect
+mocha --harmony_proxies --require harmony-reflect
+```
+
+### node 0.10
+```
+mocha --harmony_proxies --require harmony-reflect --harmony 
 ```
 
 ## Example
