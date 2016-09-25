@@ -18,7 +18,6 @@ describe 'propertyProxy', ->
     boundProxy()
 
     sinon.assert.calledOn behaviour, fakeChai
-
   describe 'proxy', ->
     describe 'get', ->
 
@@ -27,7 +26,7 @@ describe 'propertyProxy', ->
           assert.equal boundProxy().to, 'be awesome'
 
       context 'not a chai property', ->
-        it 'delegates to property method', ->
+        it "delegates to chai's property method", ->
           propertySpy = sandbox.spy(fakeChai, 'property')
 
           proxy = boundProxy()
