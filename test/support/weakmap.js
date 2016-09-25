@@ -1,2 +1,0 @@
-global.weakmap = require('weakmap')
-
