@@ -1,11 +1,11 @@
-var _proxy = Symbol()
+var proxyCache = new WeakMap()
 
 module.exports = function (behaviour) {
   return function () {
     behaviour.call(this)
-    
-    if (!this[_proxy])
-      this[_proxy] = new Proxy(this, {
+
+    if (!proxyCache.has(this))
+      proxyCache.set(this, new Proxy(this, {
 
         get: function (target, name, proxy) {
           if (name in target)
@@ -15,8 +15,8 @@ module.exports = function (behaviour) {
             return proxy
           }
         }
-      })
+      }))
 
-    return this[_proxy] 
+    return proxyCache.get(this)
   }
 }
