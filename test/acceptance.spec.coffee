@@ -1,6 +1,7 @@
 require('chai').use require '../src'
 
 describe 'acceptance', ->
+
   specify 'have.property', ->
     assert.throws(
       -> {}.should.have.someProperty,
@@ -44,8 +45,8 @@ describe 'acceptance', ->
     }
 
     response.should.have.status.eq(200)
-                    .and.body.without.error
-                    .and.body.data.has.count.above(0)
-                                  .and.items[0].with.name.which.is.a('string')
-                                                .and.description
+                   .and.body.without.error
+                   .and.body.data.has.count.above(0)
+                                 .and.items[0].has.name.which.is.a('string')
+                                              .and.description
     return

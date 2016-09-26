@@ -4,7 +4,6 @@ module.exports = function (chai) {
 
   property('without', negate)
 
-  property('with',    setRootObj)
   property('have',    setRootObj)
   property('has',     setRootObj)
 
