@@ -1,7 +1,6 @@
 --require ./test/support/chai
 --require ./test/support/sinon
 
---harmony
 --harmony_proxies
 --require harmony-reflect
 

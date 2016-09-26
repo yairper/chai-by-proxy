@@ -1,7 +1,9 @@
 describe 'PropertyProxy', ->
+
   PropertyProxy = require '../src/property_proxy'
 
   describe 'get', ->
+
     context 'chai property', ->
       it 'delegates to chai', ->
         fakeChai = { to: 'be awesome' }

@@ -3,9 +3,11 @@ module.exports = function (chai) {
   var PropertyProxy = require('./property_proxy')
 
   property('without', negate)
-  property('have',    setRootObj)
+
   property('with',    setRootObj)
+  property('have',    setRootObj)
   property('has',     setRootObj)
+
   property('and',     useRootObj)
 
   function property (name, getter) {
