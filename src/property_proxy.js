@@ -1,8 +1,10 @@
 var proxyCache = new WeakMap()
 
 module.exports = function (target) {
-  if (!proxyCache.has(target))
-    proxyCache.set(target, new Proxy(target, {
+  proxy = proxyCache.get(target)
+
+  if (!proxy)
+    proxyCache.set(target, proxy= new Proxy(target, {
 
       get: function (target, name, proxy) {
         if (name in target)
@@ -14,5 +16,5 @@ module.exports = function (target) {
       }
     }))
 
-  return proxyCache.get(target)
+  return proxy
 }
