@@ -47,13 +47,13 @@ obj.should.have.property('which', 'that')
 ## Example (in coffeescript)
 ```coffeescript
 response =
-    status: 200
-    body:
-      data:
-        count: 1
-        items: [
-          { name: '', description: null }
-        ]
+  status: 200
+  body:
+    data:
+      count: 1
+      items: [
+        { name: '', description: null }
+      ]
         
 response.should.have.status.eq(200)
                 .and.body.without.error
