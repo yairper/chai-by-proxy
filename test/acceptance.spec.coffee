@@ -49,12 +49,10 @@ describe 'acceptance', ->
         data:
           count: 1
           items: [
-            { name: '', description: null }
+            { name: 'chain killer' }
           ]
 
-    response.should.have.status.eq(200)
+    response.should.have.status.which.eq(200)
                     .and.body.without.error
                     .and.body.data.has.count.above(0)
-                                  .and.items[0].has.name.which.is.a('string')
-                                               .and.description
-    return
+                                  .and.items[0].name= 'chain killer'

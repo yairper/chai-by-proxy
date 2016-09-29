@@ -21,21 +21,21 @@ obj.should.have.property('foo').property('bar').eq('baz')
 ```
 ### `chai`'s properties are prior to your object's
 ```javascript
-var obj = { which: 'that' }
+var obj = { which: 'witch' }
 
 // you can't do
-obj.should.have.which.eq('that')
+obj.should.have.which.eq('witch')
 
 // instead, fallback to old style
-obj.should.have.property('which', 'that')
+obj.should.have.property('which', 'witch')
 ```
 ### `and` (goes back to the last have/has)
 ```javascript
 var obj = { foo: { bar: '' }, 
             baz: { qux: 11 } }
             
-expect(obj).to.have.foo.bar.instanceof('string')
-               .and.baz.qux
+expect(obj).to.have.foo.bar.with.a('string')
+               .and.baz.qux.eq(11)
 ```
 ### `without` (negates)
 ```javascript
@@ -63,12 +63,11 @@ response =
     data:
       count: 1
       items: [
-        { name: '', description: null }
+        { name: 'chain killer' }
       ]
-        
-response.should.have.status.eq(200)
+
+response.should.have.status.which.eq(200)
                 .and.body.without.error
                 .and.body.data.has.count.above(0)
-                              .and.items[0].has.name.which.is.a('string')
-                                           .and.description
+                              .and.items[0].name= 'chain killer'
 ```
