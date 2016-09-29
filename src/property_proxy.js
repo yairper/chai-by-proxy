@@ -1,20 +1,15 @@
-var proxyCache = new WeakMap()
+var CACHE = require('es6-symbol')()
 
 module.exports = function (target) {
-  proxy = proxyCache.get(target)
-
-  if (!proxy)
-    proxyCache.set(target, proxy= new Proxy(target, {
-
+  return this[CACHE] = this[CACHE] ||
+    new Proxy(target,
+    {
       get: function (target, name, proxy) {
         if (name in target)
           return target[name]
-        else {
-          target.property(name)
-          return proxy
-        }
-      }
-    }))
 
-  return proxy
+        target.property(name)
+        return proxy
+      }
+    })
 }
