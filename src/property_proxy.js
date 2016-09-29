@@ -1,7 +1,7 @@
 var CACHE = require('es6-symbol')()
 
 module.exports = function (target) {
-  return this[CACHE] = this[CACHE] ||
+  return target[CACHE] = target[CACHE] ||
     new Proxy(target,
     {
       get: function (target, name, proxy) {
