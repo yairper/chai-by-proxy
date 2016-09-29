@@ -1,6 +1,6 @@
 {
   "name": "chai-by-proxy",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Chai assertions using object's properties as chainables",
     "keywords": [
     "test",
