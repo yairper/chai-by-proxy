@@ -1,17 +1,27 @@
 {
   "name": "chai-by-proxy",
-  "version": "0.0.7",
-  "description": "",
-  "main": "src/index.js",
+  "version": "0.0.8",
+  "description": "Chai assertions using object's properties as chainables",
+    "keywords": [
+    "test",
+    "assertion",
+    "assert",
+    "testing",
+    "chai",
+    "chai-plugin",
+    "browser",
+    "proxy",
+    "proxies",
+    "es6-proxies",
+    "es6-proxy"
+  ],
+  "main": "src/index",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/yairper/chai-by-proxy.git"
   },
   "author": "yairper",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/yairper/chai-by-proxy/issues"
-  },
+  "license": "MIT",
   "homepage": "https://github.com/yairper/chai-by-proxy#readme",
   "devDependencies": {
     "chai": "^3.5.0",
