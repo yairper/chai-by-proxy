@@ -1,7 +1,6 @@
 # chai-by-proxy
 
 ## Usage
-### node 6
 ```bash
 $ npm install ?
 $ npm install --save-dev harmony-reflect              # node 0.10+
