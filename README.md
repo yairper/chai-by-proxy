@@ -19,6 +19,16 @@ obj.should.have.foo.bar.eq('baz')
 // same as
 obj.should.have.property('foo').property('bar').eq('baz')
 ```
+### `chai`'s properties are prior to your object's
+```javascript
+var obj = { which: 'that' }
+
+// you can't do
+obj.should.have.which.eq('that')
+
+// instead, fallback to old style
+obj.should.have.property('which', 'that')
+```
 ### `and` (goes back to the last have/has)
 ```javascript
 var obj = { foo: { bar: '' }, 
@@ -33,18 +43,19 @@ var obj = { foo: { bar: {} } }
 
 obj.should.have.foo.bar.without.baz
 ```
-### `chai`'s properties are prior to your object's
+### `=` (equals)
 ```javascript
-var obj = { which: 'that' }
+var obj = { foo: { bar: 'baz' } }
 
-// you can't do
-obj.should.have.which.eq('that')
-
-// instead, fallback to old style
-obj.should.have.property('which', 'that')
+obj.should.have.foo.bar= 'baz'
 ```
+### `not=` (not.equals)
+```javascript
+var obj = { foo: { bar: 'baz' } }
 
-## Example (in coffeescript)
+obj.should.have.foo.bar.not= 'qux'
+```
+### long live the chain (in coffeescript)
 ```coffeescript
 response =
   status: 200
