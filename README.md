@@ -2,18 +2,20 @@
 
 ## Usage
 ### node 6
+```
+npm install ?
+```
 
 
 ### node 0.12+
-`npm install --save-dev harmony-reflect`
-
-mocha.opts
-
-`--harmony_proxies --require harmony-reflect`
+```
+$ npm install --save-dev harmony-reflect`
+$ echo "--harmony_proxies --require harmony-reflect" >> test/mocha.opts
+```
 
 ### node 0.10
 ```
-mocha --harmony
+$ echo "--harmony_collections" >> test/mocha.opts
 ```
 
 ## Example
