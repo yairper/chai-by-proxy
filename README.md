@@ -3,17 +3,16 @@
 ## Usage
 ```bash
 $ npm install --save-dev chai-by-proxy?                # node 0.10+
-
 $ npm install --save-dev harmony-reflect               # node 0.10-5.x
+
 $ echo "--harmony_proxies"         >> test/mocha.opts
 $ echo "--require harmony-reflect" >> test/mocha.opts
-
 $ echo "--harmony_collections"     >> test/mocha.opts  # node 0.10
 ```
 
 ### `have/has` (starts a chain)
 ```javascript
-var obj = { foo: { bar: 'baz' } }
+obj = { foo: { bar: 'baz' } })
 
 obj.should.have.foo.bar.eq('baz')
 // same as
@@ -21,41 +20,39 @@ obj.should.have.property('foo').property('bar').eq('baz')
 ```
 ### `chai`'s properties are prior to your object's
 ```javascript
-var obj = { which: 'witch' }
-
+obj = { which: '' }
 // you can't do
-obj.should.have.which.eq('witch')
-
+obj.should.have.which
 // instead, fallback to old style
-obj.should.have.property('which', 'witch')
+obj.should.have.property('which')
 ```
 ### `and` (goes back to the last have/has)
 ```javascript
-var obj = { foo: { bar: '' }, 
-            baz: { qux: 11 } }
+obj = { foo: { bar: '' }, 
+        baz: { qux: 11 } }
             
-expect(obj).to.have.foo.bar.with.a('string')
-               .and.baz.qux.eq(11)
+obj.should.have.foo.bar.with.a('string')
+           .and.baz.qux.eq(11)
 ```
 ### `without` (negates)
 ```javascript
-var obj = { foo: { bar: {} } }
+obj = { foo: {} }
 
-obj.should.have.foo.bar.without.baz
+obj.should.have.foo.without.bar
 ```
 ### `=` (equals)
 ```javascript
-var obj = { foo: { bar: 'baz' } }
+obj = { foo: { bar: 'baz' } }
 
 obj.should.have.foo.bar= 'baz'
 ```
 ### `not=` (not.equals)
 ```javascript
-var obj = { foo: { bar: 'baz' } }
+obj = { foo: { bar: 'baz' } }
 
 obj.should.have.foo.bar.not= 'qux'
 ```
-### long live the chain (in coffeescript)
+### long live the chain
 ```coffeescript
 response =
   status: 200
@@ -66,8 +63,8 @@ response =
         { name: 'chain killer' }
       ]
 
-response.should.have.status.which.eq(200)
-                .and.body.without.error
-                .and.body.data.has.count.above(0)
-                              .and.items[0].name= 'chain killer'
+expect(response).to.have.status.which.eq(200)
+                    .and.body.without.error
+                    .and.body.data.has.count.above(0)
+                                  .and.items[0].name= 'chain killer'
 ```
