@@ -12,7 +12,7 @@ $ echo "--harmony_proxies"         >> test/mocha.opts
 $ echo "--require harmony-reflect" >> test/mocha.opts
 ```
 #### node 0.10
-```
+```bash
 $ echo "--harmony_collections" >> test/mocha.opts
 ```
 
