@@ -1,6 +1,6 @@
 # chai-by-proxy
 
-## Get started
+## Getting started
 ```bash
 $ npm install --save-dev chai-by-proxy?                # node 0.10+
 $ npm install --save-dev harmony-reflect               # node 0.10-5.x
@@ -9,6 +9,8 @@ $ echo "--harmony_proxies"         >> test/mocha.opts
 $ echo "--require harmony-reflect" >> test/mocha.opts
 $ echo "--harmony_collections"     >> test/mocha.opts  # node 0.10
 ```
+
+## Usage
 ```javascript
 var chai = require('chai')
 chai.use(require('chai-by-proxy'))
