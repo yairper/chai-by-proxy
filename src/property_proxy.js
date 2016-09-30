@@ -1,7 +1,7 @@
-var CACHE = require('es6-symbol')()
+var cache = new WeakMap()
 
 module.exports = function (target) {
-  return target[CACHE] = target[CACHE] ||
+  var proxy = cache.get(target) ||
     new Proxy(target,
     {
       get: function (target, name, proxy) {
@@ -17,4 +17,7 @@ module.exports = function (target) {
                      : target.property(name, value)
       }
     })
+
+  cache.set(target, proxy)
+  return proxy
 }
