@@ -1,6 +1,6 @@
 {
   "name": "chai-by-proxy",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "Chai assertions using object's properties as chainables",
     "keywords": [
       "test",
@@ -14,7 +14,7 @@
       "es6-proxy"
   ],
   "main": "./src/index.js",
-  "repository": "yairper/chai-by-proxy.git",
+  "repository": "yairper/chai-by-proxy",
   "author": "yairper",
   "license": "MIT",
   "homepage": "https://github.com/yairper/chai-by-proxy#readme",
