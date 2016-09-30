@@ -1,7 +1,7 @@
 {
   "name": "chai-by-proxy",
-  "version": "0.0.12",
-  "description": "Chai assertions using object's properties as chainables",
+  "version": "0.0.13",
+  "description": "Empowers chai's assertions using es6 proxy",
     "keywords": [
       "test",
       "assertion",
