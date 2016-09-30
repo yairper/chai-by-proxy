@@ -31,11 +31,11 @@ obj.should.have.property('foo').property('bar').eq('baz')
 ```
 #### `chai`'s properties are prior to your object's
 ```javascript
-obj = { which: '' }
+obj = { a: { property: '' } }
 // you can't do
-obj.should.have.which
+obj.should.have.a.property
 // instead, fallback to old style
-obj.should.have.property('which')
+obj.should.have.deep.property('a.property')
 ```
 #### `and` (goes back to the last have/has)
 ```javascript
