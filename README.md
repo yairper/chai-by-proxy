@@ -2,7 +2,7 @@
 
 ## Getting started
 ```bash
-$ npm install --save-dev chai-by-proxy?                # node 0.10+
+$ npm install --save-dev chai-by-proxy                 # node 0.10+
 $ npm install --save-dev harmony-reflect               # node 0.10-5.x
 
 $ echo "--harmony_proxies"         >> test/mocha.opts
@@ -33,9 +33,9 @@ obj.should.have.property('which')
 ```
 ### `and` (goes back to the last have/has)
 ```javascript
-obj = { foo: { bar: '' }, 
+obj = { foo: { bar: '' },
         baz: { qux: 11 } }
-            
+
 obj.should.have.foo.bar.with.a('string')
            .and.baz.qux.eq(11)
 ```
