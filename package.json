@@ -10,8 +10,8 @@
     "chai",
     "chai-plugin",
     "browser",
-    "proxy",
-    "es6-proxy"
+    "es6",
+    "objects"
   ],
   "main": "./src/index.js",
   "repository": "yairper/chai-by-proxy",
