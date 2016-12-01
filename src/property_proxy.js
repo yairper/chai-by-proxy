@@ -11,11 +11,6 @@ module.exports = function (target) {
         target.property(name)
         return proxy
       }
-      ,
-      set: function (target, name, value) {
-        name==='not' ? target.not.eq(value)
-                     : target.property(name, value)
-      }
     })
 
   cache.set(target, proxy)
